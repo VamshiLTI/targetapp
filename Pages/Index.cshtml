@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+//add c#c code here
+
+@{
+
+    var myUserSecret = Environment.GetEnvironmentVariable("MYSECRET", EnvironmentVariableTarget.User) ?? "";
+    var myMachineSecret = Environment.GetEnvironmentVariable("MYSECRET", EnvironmentVariableTarget.Machine) ?? "";
+    var myProcessSecret = Environment.GetEnvironmentVariable("MYSECRET", EnvironmentVariableTarget.Process) ?? "";
+
+}
+<h1>Value of Secret (User) is '@myUserSecret'</h1>
+<h1>Value of Secret (Machine) is '@myMachineSecret'</h1>
+<h1>Value of Secret (Process) is '@myProcessSecret'</h1>
